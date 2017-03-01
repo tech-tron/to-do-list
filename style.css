@@ -1,23 +1,23 @@
 body
 {
   background-color: #222;
+  font-size: 1.7em;
+  font-weight: 700;
 }
 #header
 {
   color: blue;/*later will be a js variable*/
   text-align: center;
-  font-size: 1.7em;
-  font-weight: 700;
   border: 1px blue solid;
   width: 70%;
   margin-left: 15%;
-
+  background-color: #111;
 }
 #userInput
 {
   width: 99%;
   margin-left: .5%;
-
+  background-color: #ccc;
 }
 #title
 {
@@ -29,6 +29,9 @@ body
 }
 #quote
 {
-  width: 90%;
-  margin-left: 5%;
+  width: 96%;
+  margin-left: 2%;
+  color: #fff;
+  padding: 3% 0%;
+  text-align: center;
 }
