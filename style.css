@@ -18,6 +18,7 @@ body
   width: 99%;
   margin-left: .5%;
   background-color: #ccc;
+  color: black;
 }
 #title
 {
@@ -34,4 +35,19 @@ body
   color: #fff;
   padding: 3% 0%;
   text-align: center;
+}
+li
+{
+  width: 75%;
+  margin-left: 7%;
+  list-style-type: none;
+  background-color: #999;
+  color: blue;
+  text-align: center;
+  padding: 2%;
+  margin-top: 1%;
+}
+li:nth-child(even)
+{
+  background-color: #ccc;
 }

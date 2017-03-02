@@ -4,17 +4,22 @@ $(document).ready(function(){
   var listItem = document.createElement('li')
 
   getQuote();
+  count = 0;
   userInput.focus()
 
   userInput.onkeyup = function(event){
     if(event.which === 13){
-
-      text = userInput.value;
-      alert(text);
+      addListItem(userInput.value)
     }
   }
 
 })
+
+function addListItem(text){
+  $('#list').append('<li id="'+count+'">'+text+'</li>')
+  userInput.focus();
+  userInput.select();
+}
 
 function getQuote(){
   //gonna get quote from un made json
