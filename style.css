@@ -36,18 +36,23 @@ body
   padding: 3% 0%;
   text-align: center;
 }
-li
+#list
 {
-  width: 75%;
-  margin-left: 7%;
-  list-style-type: none;
-  background-color: #999;
+
+}
+p
+{
+  font: 400 70px/0.8 'Great Vibes', Helvetica, sans-serif;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  width: 70%;
+  margin: 0px;
+  padding: 2%;
+  margin-left: 15%;
+  background-color: #555;
   color: blue;
   text-align: center;
-  padding: 2%;
-  margin-top: 1%;
 }
-li:nth-child(even)
+p:nth-child(even)
 {
-  background-color: #ccc;
+  background-color: #999;
 }
