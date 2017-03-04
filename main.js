@@ -1,22 +1,49 @@
-//add quote
 $(document).ready(function(){
   var userInput = document.getElementById('userInput');
 
   getQuote();
-  var idHolder = 0;
-  userInput.focus()
 
+  var color = [
+    "#700000",
+    "#700000",
+    "#FF9900",
+    "#FFCC11",
+    "#32CD32"
+  ];
+
+  var counter = 0;
+
+  userInput.focus();
   userInput.onkeyup = function(event){
     if(event.which === 13){
       addListItem(userInput.value)
+    };
+  };
+
+  setInterval(updateColor, 400);
+
+  function updateColor() {
+    document.getElementById('quote').style.color = color[counter];
+    document.getElementById('header').style.color = color[counter];
+    document.getElementById('header').style.border = "1px "+color[counter]+" dashed";
+    document.getElementById('title').style.border = "1px "+color[counter]+" solid";
+    document.getElementById('list').style.borderRight = "1px "+color[counter]+" dashed";
+    document.getElementById('list').style.borderLeft = "1px "+color[counter]+" dashed";
+    document.getElementById('list').style.backgroundColor = color[counter];
+    document.getElementById('battery').className = "fa fa-battery-"+counter+" fa-5x"
+    counter++;
+    if(counter < 2){
+      document.getElementById('header').style.backgroundColor = "#fff";
+    }else{
+      document.getElementById('header').style.backgroundColor = "#111"
     }
-  }
-
-
+    if(counter  == 5){
+      counter = 0;
+    };
+  };
 
   function addListItem(text){
-    idHolder++;
-    $('#list').append('<p id="'+idHolder+'">'+text+'</p>')
+    $('#list').append('<p id="listItem">'+text+'</p>')
     userInput.focus();
     userInput.select();
   }
@@ -28,4 +55,5 @@ $(document).ready(function(){
     var jAuthor
     $('#quote').text(jQuote);
   }
+
 })
