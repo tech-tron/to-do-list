@@ -15,4 +15,9 @@ possible features:
   a time estimate for the task to-do
   a predictor that helps make setting up the list daily easier
 
+
+i also would like to add a "pop up add" with a qoute from my JSON
+ten seconds to read and then a fad away action
+maybe box fades the whole ten seconds
+the words fade an additional 3
 # to-do-list
