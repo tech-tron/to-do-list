@@ -22,6 +22,7 @@ $(document).ready(function(){
   };
 
   setInterval(updateColor, 400);
+  setInterval(getQuote, 10000);
 
   function updateColor() {
     styleElements(counter);
@@ -38,7 +39,6 @@ $(document).ready(function(){
   };
 
   function styleElements(counter){
-    document.getElementById('quote').style.color = color[counter];
     document.getElementById('header').style.color = color[counter];
     document.getElementById('header').style.border = "1px "+color[counter]+" dashed";
     document.getElementById('title').style.border = "1px "+color[counter]+" solid";
@@ -46,8 +46,9 @@ $(document).ready(function(){
     document.getElementById('list').style.borderLeft = "1px "+color[counter]+" dashed";
     document.getElementById('list').style.color = color[counter];
     $('p').css("border-top", "2px "+color[counter]+" solid");
-
     document.getElementById('battery').className = "fa fa-battery-"+counter+" fa-5x"
+    $('body').css("background-color", color[counter]);
+    //document.getElementById('quote').style.color = color[counter];
   };
 
   function addListItem(text){
@@ -62,13 +63,17 @@ $(document).ready(function(){
   };
 
   function getQuote(){
-    console.log("ready");
+    //add math.random of jQoute.length
     $.getJSON("quote.json", function(data){
-      console.log(data);
-      var jQuote = data.quote.content[0];
-      var jAuthor = data.quote.author[0];
-      var jType = data.quote.type[0];
+      var current =
+        Math.round(Math.random() * data.quote.content.length);
+        console.log(current);
+      var jQuote = data.quote.content[current];
+      var jAuthor = data.quote.author[current];
+      var jType = data.quote.type[current];
+
       $('#quote').text(jQuote);
+
     });
   }
 

@@ -1,8 +1,13 @@
 body
 {
-  background-color: #222;
+  background-color: #202;
   font-size: 1.7em;
   font-weight: 700;
+  font-family: monospace;
+}
+#top
+{
+  width:100%;
 }
 #header
 {
@@ -15,6 +20,7 @@ body
 }
 #userInput
 {
+  font-family: monospace;
   width: 99%;
   margin-left: .5%;
   background-color: #ccc;
@@ -30,15 +36,19 @@ body
 }
 #quote
 {
-  width: 96%;
-  margin-left: 2%;
-  color: #fff;
-  padding: 3% 0%;
+  margin: 1px;
+  padding:3%;
+  padding-bottom: 1%;
   text-align: center;
+  background: url("https://media.mnn.com/assets/images/2016/07/unimap.jpg.653x0_q80_crop-smart.jpg");
+  background-size: 100% 100%;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 800;
 }
 #list
 {
-  font: 400 70px/0.8 'Great Vibes', Helvetica, sans-serif;
+  font: 400 3em/0.8 'Great Vibes', Helvetica, sans-serif;
   text-shadow: 4px 4px 3px rgba(0,0,0,0.5);
   width: 70%;
   margin-left: 15%;
@@ -51,5 +61,5 @@ p
 }
 p:nth-child(even)
 {
-  background-color: #444;
+  background-color: #333;
 }
