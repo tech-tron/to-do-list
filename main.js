@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   var userInput = document.getElementById('userInput');
 
   getQuote();
@@ -24,7 +25,6 @@ $(document).ready(function(){
 
   function updateColor() {
     styleElements(counter);
-    //nthRowUpdate(counter);
     counter++;
     if(counter < 2){
       document.getElementById('battery').style.backgroundColor = "#fff";
@@ -36,15 +36,6 @@ $(document).ready(function(){
       counter = 0;
     };
   };
-  /*
-  function nthRowUpdate(counter){
-    $("p").each(function(i){
-      if (i % 2 == 1) {
-        $(this).css("background-color", "#444");
-      };
-    });
-  };
-  */
 
   function styleElements(counter){
     document.getElementById('quote').style.color = color[counter];
@@ -60,12 +51,21 @@ $(document).ready(function(){
   };
 
   function addListItem(text){
-    $('#list').append('<p id="listItem">'+text+'</p>')
+    var listItem = $('#list').append('<p id="listItem">'+text+'</p>');
+    $('p').click(function(event){
+      this.remove();
+    });
     userInput.focus();
     userInput.select();
   };
 
   function getQuote(){
+    console.log("ready");
+    $.getJSON("quote.json", function(data){
+      console.log("this"+data);
+      alert("hello");
+
+    });
     //gonna get quote from un made json
     var jQuote = "When you want it more than you want to breath, you can do anything";
     //hover over: show author details
