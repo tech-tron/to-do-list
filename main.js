@@ -24,24 +24,27 @@ $(document).ready(function(){
 
   function updateColor() {
     styleElements(counter);
-    nthRowUpdate(counter);
+    //nthRowUpdate(counter);
     counter++;
     if(counter < 2){
-      document.getElementById('header').style.backgroundColor = "#fff";
+      document.getElementById('battery').style.backgroundColor = "#fff";
+
     }else{
-      document.getElementById('header').style.backgroundColor = "#111"
+      document.getElementById('battery').style.backgroundColor = "#111"
     }
     if(counter  == 5){
       counter = 0;
     };
   };
+  /*
   function nthRowUpdate(counter){
     $("p").each(function(i){
       if (i % 2 == 1) {
-        $(this).css("color", color[counter]);
+        $(this).css("background-color", "#444");
       };
     });
   };
+  */
 
   function styleElements(counter){
     document.getElementById('quote').style.color = color[counter];
@@ -50,7 +53,9 @@ $(document).ready(function(){
     document.getElementById('title').style.border = "1px "+color[counter]+" solid";
     document.getElementById('list').style.borderRight = "1px "+color[counter]+" dashed";
     document.getElementById('list').style.borderLeft = "1px "+color[counter]+" dashed";
-    document.getElementById('list').style.backgroundColor = color[counter];
+    document.getElementById('list').style.color = color[counter];
+    $('p').css("border-top", "2px "+color[counter]+" solid");
+
     document.getElementById('battery').className = "fa fa-battery-"+counter+" fa-5x"
   };
 
