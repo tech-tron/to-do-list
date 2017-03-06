@@ -54,6 +54,8 @@ $(document).ready(function(){
     var listItem = $('#list').append('<p id="listItem">'+text+'</p>');
     $('p').click(function(event){
       this.remove();
+      userInput.focus();
+      userInput.select();
     });
     userInput.focus();
     userInput.select();
@@ -62,15 +64,12 @@ $(document).ready(function(){
   function getQuote(){
     console.log("ready");
     $.getJSON("quote.json", function(data){
-      console.log("this"+data);
-      alert("hello");
-
+      console.log(data);
+      var jQuote = data.quote.content[0];
+      var jAuthor = data.quote.author[0];
+      var jType = data.quote.type[0];
+      $('#quote').text(jQuote);
     });
-    //gonna get quote from un made json
-    var jQuote = "When you want it more than you want to breath, you can do anything";
-    //hover over: show author details
-    var jAuthor
-    $('#quote').text(jQuote);
   }
 
 })
