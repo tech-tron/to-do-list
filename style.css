@@ -41,7 +41,7 @@ body
   font: 400 70px/0.8 'Great Vibes', Helvetica, sans-serif;
   text-shadow: 4px 4px 3px rgba(0,0,0,0.5);
   width: 70%;
-  color: #fff;
+  color: #eee;
   margin-left: 15%;
   text-align: center;
   border-left: 1px blue solid;
@@ -49,5 +49,6 @@ body
 }
 #listItem:nth-child(even)
 {
-  background-color: #333;
+  border-top: 4px #fff solid;
+  background-color: #000;
 }

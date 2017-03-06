@@ -36,7 +36,11 @@ $(document).ready(function(){
     };
   };
   function nthRowUpdate(counter){
-
+    $("p").each(function(i){
+      if (i % 2 == 1) {
+        $(this).css("color", color[counter]);
+      };
+    });
   };
 
   function styleElements(counter){
